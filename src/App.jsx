@@ -10,17 +10,10 @@ const App = () => {
   const navigate = useNavigate();
   const [loadStatus, setLoadStatus] = useState(-1);
   const [status, setStatus] = useState(0);
-  const myURL = import.meta.env.VITE_RD_URLS.split(" ")[0].split("::")[1];
   const searchParams = useParams();
-  console.log(searchParams.id);
 
   const getURL = () => {
     if (import.meta.env.VITE_RD_URLS.includes(searchParams.id + "::")) {
-      console.log(
-        import.meta.env.VITE_RD_URLS.split(searchParams.id + "::")[1].split(
-          " "
-        )[0]
-      );
       return import.meta.env.VITE_RD_URLS.split(
         searchParams.id + "::"
       )[1].split(" ")[0];
